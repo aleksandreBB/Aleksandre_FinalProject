@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Automation Suite" verbose="1" thread-count="1" parallel="tests">
+
+    <test name="zoomer_cartPage_test" parallel="tests">
+        <classes>
+            <class name="CartTest"/>
+        </classes>
+    </test>
+
+    <test name="zoomer_mobilePhonePage_test" parallel="tests">
+        <classes>
+            <class name="MobilePhonePageTest"/>
+        </classes>
+    </test>
+
+
+
+
+</suite>
