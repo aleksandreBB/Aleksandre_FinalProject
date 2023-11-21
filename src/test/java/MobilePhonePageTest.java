@@ -7,14 +7,14 @@ import utils.Chromerunner;
 
 import java.time.Duration;
 
-import static DataObject.MobilePhonePageData.left_random_price;
+import static DataObject.MobilePhonePageData.random_price;
 import static com.codeborne.selenide.Selenide.$;
+import static java.lang.Thread.sleep;
 
 
 public class MobilePhonePageTest extends Chromerunner {
     HomePageStep homePageStep = new HomePageStep();
     MobilePhoneStep mobilePhoneStep = new MobilePhoneStep();
-
     @Test
     public void left_slider_price_test() {
         homePageStep.log_in_mobile_phone_page();
@@ -44,11 +44,17 @@ public class MobilePhonePageTest extends Chromerunner {
         Assert.assertEquals(mobilePhoneStep.get_right_slider_head_price(),mobilePhoneStep.random_max_price());
     }
     @Test
-    public void mobile_phone_sort_test(){
+    public void mobile_phone_decreasing_sort_test(){
         homePageStep.log_in_mobile_phone_page();
         mobilePhoneStep.mobile_phone_decreasing_sort();
-        mobilePhoneStep.mobile_phone_size();
+        mobilePhoneStep.mobile_phone_count_size();
         mobilePhoneStep.Compare_prices_test();
     }
-
+    @Test
+    public  void mobile_phone_price_sort_test(){
+        homePageStep.log_in_mobile_phone_page();
+        mobilePhoneStep.random_left_price();
+        mobilePhoneStep.random_right_price();
+        mobilePhoneStep.slider_sort_prices_test();
+    }
 }

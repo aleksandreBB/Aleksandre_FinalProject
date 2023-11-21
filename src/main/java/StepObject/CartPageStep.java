@@ -43,6 +43,7 @@ public class CartPageStep extends CartPage {
         add_button3.click();
         sleep(1000);
         return this;
+        //თაკო აქ სლიფის გარეშე არ მუშაობს სწრაპად კლიკავს და კალათაში მარტო ბოლო ვარდება ხოლმე
     }
 
 
@@ -88,6 +89,16 @@ public class CartPageStep extends CartPage {
 
     public CartPageStep go_to_buy(){
         buy_button.click();
+        return this;
+    }
+
+    public CartPageStep clear_cart_button_click(){
+        clear_cart_buttom.click();
+        return this;
+    }
+    public CartPageStep clear_cart_click(){
+        clear_cart_yes.click();
+        sleep(2000);
         return this;
     }
 

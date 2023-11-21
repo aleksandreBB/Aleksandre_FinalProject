@@ -25,8 +25,12 @@ public class CartTest extends Chromerunner {
        commonPageStep.Search_item(search_input_value);
        cartPageStep.add_button_check();
        commonPageStep.log_in_cart_page();
-       cartPageStep.waiting_item();
        Assert.assertTrue((cartPage.cart_item).is(Condition.visible));
+       cartPageStep.clear_cart_button_click();
+       Assert.assertTrue((cartPageStep.clear_cart_window).is(Condition.visible));
+       cartPageStep.clear_cart_click();
+       Assert.assertFalse((cartPage.cart_item).is(Condition.visible));
+
    }
     @Test
     public void cart_price_test() {
