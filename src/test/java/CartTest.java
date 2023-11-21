@@ -19,7 +19,7 @@ public class CartTest extends Chromerunner {
     CartPage cartPage = new CartPage();
     HomePageStep homePageStep = new HomePageStep();
    @Test
-   public void add_item_to_cart_test() {
+   public void add_and_clear_item_to_cart_test() {
        commonPageStep.log_in_cart_page();
        cartPageStep.empty_cart_check();
        commonPageStep.Search_item(search_input_value);

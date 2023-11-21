@@ -46,8 +46,6 @@ public class CartPageStep extends CartPage {
         //თაკო აქ სლიფის გარეშე არ მუშაობს სწრაპად კლიკავს და კალათაში მარტო ბოლო ვარდება ხოლმე
     }
 
-
-
     public int cart_item_sum(){
         cart_item_area.shouldBe(Condition.visible, Duration.ofMillis(8000));
         int cart_count = $(".sc-718d9655-1").$$(".sc-718d9655-17").size();
@@ -59,9 +57,7 @@ public class CartPageStep extends CartPage {
             sum += second_price;
         }
         return sum;
-
     }
-
     public int value_of_items(){
         value_of_items_string.shouldBe(Condition.visible, Duration.ofMillis(8000));
         String string_value = value_of_items_string.getText();
@@ -70,28 +66,22 @@ public class CartPageStep extends CartPage {
 
         return value_items;
     }
-
     public int value_of_shipping(){
         String string_hipping_cost = value_of_shipping_string.getText();
         string_hipping_cost = string_hipping_cost.replaceAll("[^0-9.]", "");
         int value_shipping = Integer.parseInt(string_hipping_cost);
-
         return value_shipping;
-
     }
-
     public int amount_to_be_Paid(){
         String string_amount_to_be_paid = amount_to_be_paid_string.getText();
         string_amount_to_be_paid = string_amount_to_be_paid.replaceAll("[^0-9.]", "");
         int amount_to_paid = Integer.parseInt(string_amount_to_be_paid);
         return amount_to_paid;
     }
-
     public CartPageStep go_to_buy(){
         buy_button.click();
         return this;
     }
-
     public CartPageStep clear_cart_button_click(){
         clear_cart_buttom.click();
         return this;
@@ -101,7 +91,6 @@ public class CartPageStep extends CartPage {
         sleep(2000);
         return this;
     }
-
 }
 
 
