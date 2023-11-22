@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage {
     public SelenideElement
-    mobile_phone_button = $(byText("მობილურები")),
-    log_in_page = $(".sc-b592c520-1");
+    mobile_phone_button = $(byText("მობილურები"));
+
+
 }

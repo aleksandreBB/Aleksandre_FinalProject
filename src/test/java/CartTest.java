@@ -1,5 +1,6 @@
 import PageObject.CartPage;
 import PageObject.CommonPage;
+import PageObject.RegAuthorizationPage;
 import StepObject.CartPageStep;
 import StepObject.CommonPageStep;
 import StepObject.HomePageStep;
@@ -14,6 +15,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class CartTest extends Chromerunner {
+    RegAuthorizationPage regAuthorizationPage = new RegAuthorizationPage();
     CartPageStep cartPageStep = new CartPageStep();
     CommonPageStep commonPageStep = new CommonPageStep();
     CartPage cartPage = new CartPage();
@@ -51,7 +53,6 @@ public class CartTest extends Chromerunner {
         Assert.assertEquals(cartPageStep.amount_to_be_Paid(),
                 cartPageStep.value_of_items() + cartPageStep.value_of_shipping());
         cartPageStep.go_to_buy();
-        Assert.assertTrue(homePageStep.log_in_page.is(Condition.visible));
+        Assert.assertTrue(regAuthorizationPage.authorization_page.is(Condition.visible));
     }
-
 }

@@ -16,10 +16,8 @@ public class MobilePhonePage {
     mobile_phone_item_area = $(".sc-1e9b893c-12"),
     mobile_phone_price_div = $(".sc-73f3188d-10"),
     mobile_phone_price_div2 = $(".sc-bdd54c0a-10"),
-
     mobile_phone_0index_String_price = $(".sc-73f3188d-10",0),
     mobile_phone_0index_String_price2 = $(".sc-bdd54c0a-10",0),
-
     see_more = $(".sc-1e9b893c-14");
 
 

@@ -85,8 +85,13 @@ public class MobilePhoneStep extends MobilePhonePage {
         max_price.setValue(String.valueOf(right_half_random_price));
         return random_price;
     }
+//    public MobilePhoneStep mobile_phone_space_waiting(){
+//        mobile_phone_0index_String_price2.shouldBe(Condition.visible, Duration.ofMillis(10000));
+//        return this;
+//    }
     public MobilePhoneStep slider_sort_prices_test() {
-        mobile_phone_price_div2.shouldBe(Condition.visible, Duration.ofMillis(10000));
+        sleep(4000);
+//        mobile_phone_0index_String_price2.shouldBe(Condition.visible, Duration.ofMillis(10000));
         for ( int i = 0; i < mobile_phone_count_size(); i++ ){
             String next_string_price = $(".sc-bdd54c0a-10",i).getText();
             next_string_price = next_string_price.replaceAll("[^0-9]", "");
