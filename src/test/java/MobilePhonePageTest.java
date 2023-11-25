@@ -20,28 +20,28 @@ public class MobilePhonePageTest extends Chromerunner {
         homePageStep.log_in_mobile_phone_page();
         mobilePhoneStep.random_min_price();
         mobilePhoneStep.get_left_slider_line_price();
-        Assert.assertEquals(mobilePhoneStep.random_min_price(), mobilePhoneStep.get_left_slider_line_price());
+        Assert.assertEquals(mobilePhoneStep.random_min_price(), mobilePhoneStep.get_left_slider_line_price(),"შემთხვევითი ფასი ტოლი უნდა იყოს მარცხენა სლაიდერის განლაგების შესაბამის ფასთან");
     }
     @Test
     public void right_slider_price_test() {
         homePageStep.log_in_mobile_phone_page();
         mobilePhoneStep.random_max_price();
         mobilePhoneStep.get_right_slider_line_price();
-        Assert.assertEquals(mobilePhoneStep.random_max_price(), mobilePhoneStep.get_right_slider_line_price());
+        Assert.assertEquals(mobilePhoneStep.random_max_price(), mobilePhoneStep.get_right_slider_line_price(),"შემთხვევითი ფასი ტოლი უნდა იყოს მარჯვენა სლაიდერის განლაგების შესაბამის ფასთან");
     }
     @Test
     public void left_black_price_test(){
         homePageStep.log_in_mobile_phone_page();
         mobilePhoneStep.random_min_price();
         mobilePhoneStep.get_left_slider_head_price();
-        Assert.assertEquals(mobilePhoneStep.get_left_slider_head_price(),mobilePhoneStep.random_min_price());
+        Assert.assertEquals(mobilePhoneStep.get_left_slider_head_price(),mobilePhoneStep.random_min_price(),"მარცხენა სლაიდერის აღმნიშვნელის ფასი ტოლი უნდა იყოს შემთხვევით ფასთან");
     }
     @Test
     public void right_black_price_test(){
         homePageStep.log_in_mobile_phone_page();
         mobilePhoneStep.random_max_price();
         mobilePhoneStep.get_right_slider_head_price();
-        Assert.assertEquals(mobilePhoneStep.get_right_slider_head_price(),mobilePhoneStep.random_max_price());
+        Assert.assertEquals(mobilePhoneStep.get_right_slider_head_price(),mobilePhoneStep.random_max_price(),"მარჯვენა სლაიდერის აღმნიშვნელის ფასი ტოლი უნდა იყოს შემთხვევით ფასთან");
     }
     @Test
     public void mobile_phone_decreasing_sort_test(){

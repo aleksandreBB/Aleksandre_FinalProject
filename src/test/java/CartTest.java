@@ -14,6 +14,7 @@ import static DataObject.CommonPageData.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
+
 public class CartTest extends Chromerunner {
     RegAuthorizationPage regAuthorizationPage = new RegAuthorizationPage();
     CartPageStep cartPageStep = new CartPageStep();
@@ -27,11 +28,11 @@ public class CartTest extends Chromerunner {
        commonPageStep.Search_item(search_input_value);
        cartPageStep.add_button_check();
        commonPageStep.log_in_cart_page();
-       Assert.assertTrue((cartPage.cart_item).is(Condition.visible));
+       Assert.assertTrue((cartPage.cart_item).is(Condition.visible),"ნივთი უნდა იყოს კალათაში");
        cartPageStep.clear_cart_button_click();
-       Assert.assertTrue((cartPageStep.clear_cart_window).is(Condition.visible));
+       Assert.assertTrue((cartPageStep.clear_cart_window).is(Condition.visible),"უნდა გამოვიდეს ნივთების გასუფთავების ფანჯარა");
        cartPageStep.clear_cart_click();
-       Assert.assertFalse((cartPage.cart_item).is(Condition.visible));
+       Assert.assertFalse((cartPage.cart_item).is(Condition.visible), " ნივთი აღარ უნდა იყოს კალათაში");
 
    }
     @Test
@@ -41,7 +42,7 @@ public class CartTest extends Chromerunner {
         commonPageStep.log_in_cart_page();
         cartPageStep.cart_item_sum();
         cartPageStep.value_of_items();
-        Assert.assertEquals(cartPageStep.cart_item_sum(), cartPageStep.value_of_items());
+        Assert.assertEquals(cartPageStep.cart_item_sum(), cartPageStep.value_of_items(),"გამოთვლილი ნივთების ჟამი ტოლი უნდა იყოს მთლიან ღირებულებაზე");
     }
     @Test
     public void full_price_test(){
@@ -51,8 +52,8 @@ public class CartTest extends Chromerunner {
         cartPageStep.value_of_shipping();
         cartPageStep.amount_to_be_Paid();
         Assert.assertEquals(cartPageStep.amount_to_be_Paid(),
-                cartPageStep.value_of_items() + cartPageStep.value_of_shipping());
+                cartPageStep.value_of_items() + cartPageStep.value_of_shipping(),"გადასახდელი თანხა ტორი უნდა იყოს ღირებულებას მიმატებული მიწოდების ღირებულება");
         cartPageStep.go_to_buy();
-        Assert.assertTrue(regAuthorizationPage.authorization_page.is(Condition.visible));
+        Assert.assertTrue(regAuthorizationPage.authorization_page.is(Condition.visible),"რეგისტრაზია ავტორიზაცის გვერდის გამოსვლა");
     }
 }

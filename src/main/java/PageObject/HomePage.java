@@ -10,4 +10,6 @@ public class HomePage {
     mobile_phone_button = $(byText("მობილურები"));
 
 
+
+
 }
