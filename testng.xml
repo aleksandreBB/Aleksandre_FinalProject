@@ -19,6 +19,12 @@
         </classes>
     </test>
 
+    <test name="zoomer_Home_Page_test" parallel="tests">
+        <classes>
+            <class name="HomePageTest"/>
+        </classes>
+    </test>
+
 
 
 

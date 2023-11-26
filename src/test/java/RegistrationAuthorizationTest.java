@@ -89,5 +89,4 @@ public class RegistrationAuthorizationTest extends Chromerunner {
 //        Assert.assertTrue((commonPage.password_mandate).is(Condition.visible));
 //        აქ ეს ორი მანდატი უნდა გამოდიოდეს, მაგრამ საიტმა აურია და აღარ გამოდის
     }
-
 }

@@ -64,7 +64,7 @@ public class MobilePhoneStep extends MobilePhonePage {
         commonPage.decreasing_price.click();
         return this;
     }
-    @Step("მობილურების რაოდენობა გვერძე")
+    @Step("მობილურების რაოდენობის გამოთვლა გვერძე")
     public int mobile_phone_count_size(){
         mobile_phone_price_div2.shouldBe(Condition.visible, Duration.ofMillis(20000));
         int mobile_count = $(".sc-1e9b893c-12").$$(".sc-bdd54c0a-10").size();
@@ -72,7 +72,7 @@ public class MobilePhoneStep extends MobilePhonePage {
     }
     @Step("მობილურის ფასის შედარება სხვა მობილურის ფასებთან")
     public MobilePhoneStep Compare_prices_test(){
-        String first_string_price = mobile_phone_0index_String_price2.getText();
+        String first_string_price = mobile_phone_0index_String_price.getText();
         first_string_price = first_string_price.replaceAll("[^0-9]", "");
         int first_price = Integer.parseInt(first_string_price);
         for (int i = 1; i < mobile_phone_count_size(); i++){
@@ -84,13 +84,13 @@ public class MobilePhoneStep extends MobilePhonePage {
         }
         return this;
     }
-    @Step("მობილურების ფილტრის შემთხვევითი ფასი 2999ლ ზე ნაკლები - {random_price}")
+    @Step("მობილურების ფილტრში შემთხვევითი 2999ლ ზე ნაკლები ფასის ჩაწერა - {random_price}")
     public int random_left_price(){
         min_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
         min_price.setValue(String.valueOf(left_half_random_price));
         return random_price;
     }
-    @Step("მობილურების ფილტრის შემთხვევითი ფასი 3000ლ ზე მეტი და 5999 ნაკლები - {random_price}")
+    @Step("მობილურების ფილტრში შემთხვევითი 3000ლ ზე მეტი და 5999 ნაკლები ფასის ჩაწერა - {random_price}")
     public int random_right_price(){
         max_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
         max_price.setValue(String.valueOf(right_half_random_price));

@@ -19,7 +19,7 @@ public class Chromerunner {
     public void tearDown(){
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
-        Selenide.closeWindow();
-        Selenide.closeWebDriver();
+//        Selenide.closeWindow();
+//        Selenide.closeWebDriver();
     }
 }

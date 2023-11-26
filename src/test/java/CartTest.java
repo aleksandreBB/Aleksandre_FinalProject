@@ -8,8 +8,6 @@ import com.codeborne.selenide.Condition;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Chromerunner;
-
-
 import static DataObject.CommonPageData.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
@@ -33,7 +31,6 @@ public class CartTest extends Chromerunner {
        Assert.assertTrue((cartPageStep.clear_cart_window).is(Condition.visible),"უნდა გამოვიდეს ნივთების გასუფთავების ფანჯარა");
        cartPageStep.clear_cart_click();
        Assert.assertFalse((cartPage.cart_item).is(Condition.visible), " ნივთი აღარ უნდა იყოს კალათაში");
-
    }
     @Test
     public void cart_price_test() {
