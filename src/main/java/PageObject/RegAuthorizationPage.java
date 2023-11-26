@@ -25,7 +25,7 @@ public class RegAuthorizationPage {
     authorization_password_input = $(".sc-af0c516c-2",1),
     forgot_password =$(".sc-389461ae-7"),
     enter_by_email = $(".sc-389461ae-8"),
-    email_mandate = $(".sc-af0c516c-6",0),
-    password_mandate = $(".sc-af0c516c-6",1),
+    //  email_mandate = $(".sc-af0c516c-6",0),  ესენ იყოს ესე თუ გამოსწორდა სატი ამებს ჩავსვავ
+    //  password_mandate = $(".sc-af0c516c-6",1), ესენ იყოს ესე თუ გამოსწორდა სატი ამებს ჩავსვავ
     invalid_username_or_password = $(".sc-389461ae-9");
 }

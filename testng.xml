@@ -13,6 +13,7 @@
         </classes>
     </test>
 
+
     <test name="zoomer_registration_Authorization_test" parallel="tests">
         <classes>
             <class name="RegistrationAuthorizationTest"/>

@@ -7,7 +7,7 @@ import utils.Chromerunner;
 
 import java.time.Duration;
 
-import static DataObject.MobilePhonePageData.random_price;
+import static DataObject.MobilePhonePageData.*;
 import static com.codeborne.selenide.Selenide.$;
 import static java.lang.Thread.sleep;
 
@@ -18,30 +18,30 @@ public class MobilePhonePageTest extends Chromerunner {
     @Test
     public void left_slider_price_test() {
         homePageStep.log_in_mobile_phone_page();
-        mobilePhoneStep.random_min_price();
+        mobilePhoneStep.random_min_price(random_price);
         mobilePhoneStep.get_left_slider_line_price();
-        Assert.assertEquals(mobilePhoneStep.random_min_price(), mobilePhoneStep.get_left_slider_line_price(),"შემთხვევითი ფასი ტოლი უნდა იყოს მარცხენა სლაიდერის განლაგების შესაბამის ფასთან");
+        Assert.assertEquals(mobilePhoneStep.random_min_price(random_price), mobilePhoneStep.get_left_slider_line_price(),"შემთხვევითი ფასი ტოლი უნდა იყოს მარცხენა სლაიდერის განლაგების შესაბამის ფასთან");
     }
     @Test
     public void right_slider_price_test() {
         homePageStep.log_in_mobile_phone_page();
-        mobilePhoneStep.random_max_price();
+        mobilePhoneStep.random_max_price(random_price);
         mobilePhoneStep.get_right_slider_line_price();
-        Assert.assertEquals(mobilePhoneStep.random_max_price(), mobilePhoneStep.get_right_slider_line_price(),"შემთხვევითი ფასი ტოლი უნდა იყოს მარჯვენა სლაიდერის განლაგების შესაბამის ფასთან");
+        Assert.assertEquals(mobilePhoneStep.random_max_price(random_price), mobilePhoneStep.get_right_slider_line_price(),"შემთხვევითი ფასი ტოლი უნდა იყოს მარჯვენა სლაიდერის განლაგების შესაბამის ფასთან");
     }
     @Test
     public void left_black_price_test(){
         homePageStep.log_in_mobile_phone_page();
-        mobilePhoneStep.random_min_price();
+        mobilePhoneStep.random_min_price(random_price);
         mobilePhoneStep.get_left_slider_head_price();
-        Assert.assertEquals(mobilePhoneStep.get_left_slider_head_price(),mobilePhoneStep.random_min_price(),"მარცხენა სლაიდერის აღმნიშვნელის ფასი ტოლი უნდა იყოს შემთხვევით ფასთან");
+        Assert.assertEquals(mobilePhoneStep.get_left_slider_head_price(),mobilePhoneStep.random_min_price(random_price),"მარცხენა სლაიდერის აღმნიშვნელის ფასი ტოლი უნდა იყოს შემთხვევით ფასთან");
     }
     @Test
     public void right_black_price_test(){
         homePageStep.log_in_mobile_phone_page();
-        mobilePhoneStep.random_max_price();
+        mobilePhoneStep.random_max_price(random_price);
         mobilePhoneStep.get_right_slider_head_price();
-        Assert.assertEquals(mobilePhoneStep.get_right_slider_head_price(),mobilePhoneStep.random_max_price(),"მარჯვენა სლაიდერის აღმნიშვნელის ფასი ტოლი უნდა იყოს შემთხვევით ფასთან");
+        Assert.assertEquals(mobilePhoneStep.get_right_slider_head_price(),mobilePhoneStep.random_max_price(random_price),"მარჯვენა სლაიდერის აღმნიშვნელის ფასი ტოლი უნდა იყოს შემთხვევით ფასთან");
     }
     @Test
     public void mobile_phone_decreasing_sort_test(){
@@ -53,8 +53,9 @@ public class MobilePhonePageTest extends Chromerunner {
     @Test
     public  void mobile_phone_price_sort_test(){
         homePageStep.log_in_mobile_phone_page();
-        mobilePhoneStep.random_left_price();
-        mobilePhoneStep.random_right_price();
+        mobilePhoneStep.random_left_price(left_random_price);
+        mobilePhoneStep.random_right_price(right_random_price);
+        mobilePhoneStep.waiting_iteam();
         mobilePhoneStep.slider_sort_prices_test();
     }
 }

@@ -24,7 +24,7 @@ public class HomePageStep extends HomePage {
     }
     @Step("ახალი ნივთების სლაიდერის ზომის გაგება")
     public int new_models_slider_size(){
-        int slider_size = new_models_slider_size.size();
+        int slider_size = new_models_slider_item.size();
         return slider_size;
     }
     @Step("შემოწმება აქვს თუ არა ყველა ნივთს NEW ნიშანი")
@@ -35,7 +35,22 @@ public class HomePageStep extends HomePage {
         }
         return this;
     }
-
-
-
+    @Step("ჩამოსქროლვა ფასდაკლებული ნივთების სლაიდერამდე")
+    public HomePageStep scroll_To_sale_Slider(){
+        sale_slider.scrollTo();
+        return this;
+    }
+    @Step("ფასდაკლებული ნივთების სლაიდერის ზომის გაგება")
+    public int sale_slider_size(){
+        int slider_size = sale_slider_item.size();
+        return slider_size;
+    }
+    @Step("შემოწმება აქვს თუ არა ყველა ნივთს გადახაზული ფასი")
+    public HomePageStep checking_crossed_out_price(){
+        for (int i = 0; i < sale_slider_size(); i++){
+            soft.assertTrue(sale_slider.$(".sc-bdd54c0a-0", i).$(".sc-bdd54c0a-11").is(Condition.enabled),"ყველა ნივთს უნდა ქონდეს გადახაზული ფასი");
+            soft.assertAll();
+        }
+        return this;
+    }
 }

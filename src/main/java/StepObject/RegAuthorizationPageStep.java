@@ -84,17 +84,17 @@ public class RegAuthorizationPageStep extends RegAuthorizationPage {
     }
     @Step("შემთხვევითი მეილის შეყვანა - {uthorization_email}")
     public String put_random_email(){
-        authorization_email_input.setValue(String.valueOf(authorization_email));
+        authorization_email_input.setValue(authorization_email);
         return authorization_email;
     }
     @Step("არასწოორი შემთხვევითი მეილის შეყვანა - {authorization_last_name}")
     public String put_wrong_random_email(){
-        authorization_email_input.setValue(String.valueOf(authorization_last_name));
+        authorization_email_input.setValue(authorization_last_name);
         return authorization_last_name;
     }
     @Step("შემთხვევითი პაროლის შეყვანა - {authorization_password}")
     public String put_random_password(){
-        authorization_password_input.setValue(String.valueOf(authorization_password));
+        authorization_password_input.setValue(authorization_password);
         return authorization_password;
     }
     @Step("შესვლა მეილის საშვალებით")
@@ -107,10 +107,5 @@ public class RegAuthorizationPageStep extends RegAuthorizationPage {
         invalid_username_or_password.shouldBe(Condition.visible, Duration.ofMillis(8000));
         return this;
     }
-
-
-
-
-
 
 }

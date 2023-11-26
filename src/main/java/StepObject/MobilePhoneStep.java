@@ -14,12 +14,12 @@ import static com.codeborne.selenide.Selenide.sleep;
 public class MobilePhoneStep extends MobilePhonePage {
     CommonPage commonPage = new CommonPage();
     @Step("მობილურების ფილტრის შემთხვევითი მინიმალური ფასი - {random_price}")
-    public int random_min_price(){
+    public int random_min_price(int random_price){
         min_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
         min_price.setValue(String.valueOf(random_price));
         return random_price;
     }@Step("მობილურების ფილტრის შემთხვევითი მაქსიმალური ფასი - {random_price}")
-    public int random_max_price(){
+    public int random_max_price(int random_price){
         max_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
         max_price.setValue(String.valueOf(random_price));
         return random_price;
@@ -84,28 +84,39 @@ public class MobilePhoneStep extends MobilePhonePage {
         }
         return this;
     }
-    @Step("მობილურების ფილტრში შემთხვევითი 2999ლ ზე ნაკლები ფასის ჩაწერა - {random_price}")
-    public int random_left_price(){
+    @Step("მობილურების ფილტრში შემთხვევითი 2999ლ ზე ნაკლები ფასის ჩაწერა - {left_random_price}")
+    public int random_left_price(int left_random_price){
         min_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
-        min_price.setValue(String.valueOf(left_half_random_price));
-        return random_price;
+        min_price.setValue(String.valueOf(left_random_price));
+        return left_random_price;
     }
-    @Step("მობილურების ფილტრში შემთხვევითი 3000ლ ზე მეტი და 5999 ნაკლები ფასის ჩაწერა - {random_price}")
-    public int random_right_price(){
+    @Step("მობილურების ფილტრში შემთხვევითი 3000ლ ზე მეტი და 5999 ნაკლები ფასის ჩაწერა - {right_random_price}")
+    public int random_right_price(int right_random_price){
         max_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
-        max_price.setValue(String.valueOf(right_half_random_price));
-        return random_price;
+        max_price.setValue(String.valueOf(right_random_price));
+        return right_random_price;
     }
+    @Step("სორტირების დალოდება")
+    public MobilePhoneStep waiting_iteam(){
+        commonPage.any_item.shouldBe(Condition.visible, Duration.ofMillis(20000));
+        sleep(3000);
+        // თაკო აქ რა აღარ ჩავუწერე, ფილტრის მერე ნივთების გამოჩენას რო დაველოდო, ნივთსაც ვუწერ, ნივთები
+        // რაშიც არის ჩასმული იმ დივთან, მაგრამ ამ სლიფის გარდა არაფერი მუშაობს, ყველგან მოვაცილე სლიფი,
+        // აქ არის მარტო დატოვებული.
+        return this;
+    }
+
+
+
     @Step("ყველა მობილურის ფასის შედარება ფილტრში ჩაწერილ ფასებთან ")
     public MobilePhoneStep slider_sort_prices_test() {
-        sleep(4000);
-//        mobile_phone_0index_String_price2.shouldBe(Condition.visible, Duration.ofMillis(10000));
+        $(".sc-bdd54c0a-0",0).shouldBe(Condition.visible, Duration.ofMillis(10000));
         for ( int i = 0; i < mobile_phone_count_size(); i++ ){
             String next_string_price = $(".sc-bdd54c0a-10",i).getText();
             next_string_price = next_string_price.replaceAll("[^0-9]", "");
             int next_price = Integer.parseInt(next_string_price);
-            Assert.assertTrue((left_half_random_price <= next_price),"ფილტრის მინიმალური ფასი ნაკლები უნდა იყოს მობილურის ფასზე !");
-            Assert.assertTrue((next_price <= right_half_random_price),"მობილურის ფასი ნაკლები უნდა იყოს ფილტრის მაქსიმალურ ფასზე !");
+            Assert.assertTrue((left_random_price <= next_price),"ფილტრის მინიმალური ფასი <= უნდა იყოს მობილურის ფასზე !");
+            Assert.assertTrue((next_price <= right_random_price),"მობილურის ფასი <= უნდა იყოს ფილტრის მაქსიმალურ ფასზე !");
         }
         return this;
     }

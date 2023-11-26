@@ -26,7 +26,6 @@ public class CartPage {
     clear_cart_buttom = $(".sc-ee6d7bd2-4"),
     clear_cart_window = $ (".sc-ba053bcb-3"),
     clear_cart_yes = $(".sc-ba053bcb-8",0),
-    clear_cart_no = $(".sc-ba053bcb-8",1),
     cart_item_count_icon_1 = $("#cart-web").$(byText("1")),
     cart_item_count_icon_2 = $("#cart-web").$(byText("2")),
     cart_item_count_icon_3 = $("#cart-web").$(byText("3"));
