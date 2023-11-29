@@ -5,6 +5,9 @@ import StepObject.CartPageStep;
 import StepObject.CommonPageStep;
 import StepObject.HomePageStep;
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Chromerunner;
@@ -20,6 +23,8 @@ public class CartTest extends Chromerunner {
     CartPage cartPage = new CartPage();
     HomePageStep homePageStep = new HomePageStep();
    @Test
+   @Description("კალათაში ნივთის დამატების ღილაკის და დამატება წაშლის ტესტი")
+   @Severity(SeverityLevel.MINOR)
    public void add_and_clear_item_to_cart_test() {
        commonPageStep.log_in_cart_page();
        cartPageStep.empty_cart_check();
@@ -33,6 +38,8 @@ public class CartTest extends Chromerunner {
        Assert.assertFalse((cartPage.cart_item).is(Condition.visible), " ნივთი აღარ უნდა იყოს კალათაში");
    }
     @Test
+    @Description("სწორად აჯამებს თუ არა საიტი კალათაში მყოფ ნივთების ფასს")
+    @Severity(SeverityLevel.BLOCKER)
     public void cart_price_test() {
         homePageStep.log_in_mobile_phone_page();
         cartPageStep.add_3_item_in_cart();
@@ -42,6 +49,8 @@ public class CartTest extends Chromerunner {
         Assert.assertEquals(cartPageStep.cart_item_sum(), cartPageStep.value_of_items(),"გამოთვლილი ნივთების ჟამი ტოლი უნდა იყოს მთლიან ღირებულებაზე");
     }
     @Test
+    @Description("სწორად გამოაქვს თუ არა საიტს გადასახდელი თანხის რაოდენობა და ყიდვის შემთხვევაში აქტიურია თუ არა ღილაკი")
+    @Severity(SeverityLevel.BLOCKER)
     public void full_price_test(){
         homePageStep.log_in_mobile_phone_page();
         cartPageStep.add_item_in_cart();

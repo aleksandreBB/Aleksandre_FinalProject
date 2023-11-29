@@ -11,7 +11,7 @@ public class HomePage {
     mobile_phone_button = $(".sc-ded1b9c5-9",0),
     new_models_slider = $(".sc-ecbb3abd-2",1),
     sale_slider = $(".sc-ecbb3abd-2",0),
-    items_moreInfo_icon = $(".sc-bdd54c0a-32"),
+    items_moreInfo_icon = $(".sc-bdd54c0a-32"), // ამ ორს თაკო HomePageStep ებში i ციკლის მერე ვერ ვსვავ და მაინც იყოს აქ.
     old_price_icon = $(".sc-bdd54c0a-11");
     public ElementsCollection
     sale_slider_item = $(".sc-ecbb3abd-2",0).$$(".sc-bdd54c0a-0"),

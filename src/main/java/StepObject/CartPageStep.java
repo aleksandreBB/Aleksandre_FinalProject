@@ -15,7 +15,7 @@ public class CartPageStep extends CartPage {
         Assert.assertTrue(empty_cart.is(Condition.visible));
         return this;
     }
-    @Step("კალათაში დამატების ღილაკის გატესტვა")
+    @Step("კალათაში დამატების ღილაკის გატესტვა და დამატება")
     public CartPageStep add_button_check(){
         add_button.shouldBe(Condition.visible, Duration.ofMillis(8000));
         add_button.click();

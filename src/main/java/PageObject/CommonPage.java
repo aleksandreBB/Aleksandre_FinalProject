@@ -10,8 +10,8 @@ public class CommonPage {
     search_input = $(".sc-c28948c8-1"),
     cart_button = $("#cart-p"),
     sort_option = $(".sc-e7d6b729-2"),
-    decreasing_price = $(byText("ფასი: კლებადობით"),0),
-    any_item = $(".sc-bdd54c0a-0",5);
+    decreasing_price = $(byText("ფასი: კლებადობით"),0);
+
 
 
 }

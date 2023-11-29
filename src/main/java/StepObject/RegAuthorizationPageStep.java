@@ -33,12 +33,12 @@ public class RegAuthorizationPageStep extends RegAuthorizationPage {
         return this;
     }
     @Step("მობილურის ველში არასრული შემთხვევითი ნომრის ჩაწერა - {fake_random_number}")
-    public int put_incomplete_random_number(){
+    public int put_incomplete_random_number(int fake_random_number){
         reg_phone_number_input.setValue(String.valueOf(fake_random_number));
         return fake_random_number;
     }
     @Step("მობილურის ველში სრული შემთხვევითი ნომრის ჩაწერაა")
-    public int put_random_number(){
+    public int put_random_number(int full_random_number){
         reg_phone_number_input.setValue(String.valueOf(full_random_number));
         return full_random_number;
     }
@@ -82,18 +82,18 @@ public class RegAuthorizationPageStep extends RegAuthorizationPage {
         authorization_by_email.click();
         return this;
     }
-    @Step("შემთხვევითი მეილის შეყვანა - {uthorization_email}")
-    public String put_random_email(){
+    @Step("შემთხვევითი მეილის შეყვანა - {authorization_email}")
+    public String put_random_email(String authorization_email){
         authorization_email_input.setValue(authorization_email);
         return authorization_email;
     }
     @Step("არასწოორი შემთხვევითი მეილის შეყვანა - {authorization_last_name}")
-    public String put_wrong_random_email(){
+    public String put_wrong_random_email(String authorization_last_name){
         authorization_email_input.setValue(authorization_last_name);
         return authorization_last_name;
     }
     @Step("შემთხვევითი პაროლის შეყვანა - {authorization_password}")
-    public String put_random_password(){
+    public String put_random_password(String authorization_password){
         authorization_password_input.setValue(authorization_password);
         return authorization_password;
     }

@@ -15,12 +15,12 @@ public class MobilePhoneStep extends MobilePhonePage {
     CommonPage commonPage = new CommonPage();
     @Step("მობილურების ფილტრის შემთხვევითი მინიმალური ფასი - {random_price}")
     public int random_min_price(int random_price){
-        min_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
+        min_price.shouldBe(Condition.visible, Duration.ofMillis(10000));
         min_price.setValue(String.valueOf(random_price));
         return random_price;
     }@Step("მობილურების ფილტრის შემთხვევითი მაქსიმალური ფასი - {random_price}")
     public int random_max_price(int random_price){
-        max_price.shouldBe(Condition.visible, Duration.ofMillis(20000));
+        max_price.shouldBe(Condition.visible, Duration.ofMillis(10000));
         max_price.setValue(String.valueOf(random_price));
         return random_price;
     }
@@ -98,15 +98,9 @@ public class MobilePhoneStep extends MobilePhonePage {
     }
     @Step("სორტირების დალოდება")
     public MobilePhoneStep waiting_iteam(){
-        commonPage.any_item.shouldBe(Condition.visible, Duration.ofMillis(20000));
-        sleep(3000);
-        // თაკო აქ რა აღარ ჩავუწერე, ფილტრის მერე ნივთების გამოჩენას რო დაველოდო, ნივთსაც ვუწერ, ნივთები
-        // რაშიც არის ჩასმული იმ დივთან, მაგრამ ამ სლიფის გარდა არაფერი მუშაობს, ყველგან მოვაცილე სლიფი,
-        // აქ არის მარტო დატოვებული.
+        mobile_phone_loading_page.shouldBe(Condition.visible, Duration.ofMillis(10000));
         return this;
     }
-
-
 
     @Step("ყველა მობილურის ფასის შედარება ფილტრში ჩაწერილ ფასებთან ")
     public MobilePhoneStep slider_sort_prices_test() {

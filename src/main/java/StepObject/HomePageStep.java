@@ -30,8 +30,7 @@ public class HomePageStep extends HomePage {
     @Step("შემოწმება აქვს თუ არა ყველა ნივთს NEW ნიშანი")
     public HomePageStep checking_new_icon(){
         for (int i = 0; i < new_models_slider_size(); i++){
-            soft.assertTrue(new_models_slider.$(".sc-bdd54c0a-0", i).$(".sc-bdd54c0a-32").has(Condition.ownText("NEW")),"ყველა ნივთს უნდა ქონდეს NEW - ნიშანი");
-            soft.assertAll();
+            Assert.assertTrue(new_models_slider.$(".sc-bdd54c0a-0", i).$(".sc-bdd54c0a-32").has(Condition.ownText("NEW")),"ყველა ნივთს უნდა ქონდეს NEW - ნიშანი");
         }
         return this;
     }
@@ -48,8 +47,7 @@ public class HomePageStep extends HomePage {
     @Step("შემოწმება აქვს თუ არა ყველა ნივთს გადახაზული ფასი")
     public HomePageStep checking_crossed_out_price(){
         for (int i = 0; i < sale_slider_size(); i++){
-            soft.assertTrue(sale_slider.$(".sc-bdd54c0a-0", i).$(".sc-bdd54c0a-11").is(Condition.enabled),"ყველა ნივთს უნდა ქონდეს გადახაზული ფასი");
-            soft.assertAll();
+            Assert.assertTrue(sale_slider.$(".sc-bdd54c0a-0", i).$(".sc-bdd54c0a-11").is(Condition.enabled),"ყველა ნივთს უნდა ქონდეს გადახაზული ფასი");
         }
         return this;
     }
