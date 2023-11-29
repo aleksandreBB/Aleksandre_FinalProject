@@ -31,7 +31,6 @@ public class CartPage {
     cart_item_count_icon_3 = $("#cart-web").$(byText("3"));
     public ElementsCollection
     cart_count = $(".sc-718d9655-1").$$(".sc-718d9655-17");
-
 }
 
 

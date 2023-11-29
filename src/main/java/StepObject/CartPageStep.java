@@ -65,7 +65,6 @@ public class CartPageStep extends CartPage {
         String string_value = value_of_items_string.getText();
         string_value = string_value.replaceAll("[^0-9.]", "");
         int value_items = Integer.parseInt(string_value);
-
         return value_items;
     }
     @Step("მიწოდების ღირებულება")

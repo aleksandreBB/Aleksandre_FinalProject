@@ -102,8 +102,5 @@ public class RegistrationAuthorizationTest extends Chromerunner {
         regAuthorizationPageStep.enter_by_email_click();
         regAuthorizationPageStep.waiting_invalid_username_or_password();
         Assert.assertTrue((regAuthorizationPage.invalid_username_or_password).is(Condition.visible),"უნდა გამოჩნდეს მანდატორი");
-//        Assert.assertTrue((commonPage.email_mandate).is(Condition.visible));
-//        Assert.assertTrue((commonPage.password_mandate).is(Condition.visible));
-//        აქ ეს ორი მანდატი უნდა გამოდიოდეს, მაგრამ საიტმა აურია და აღარ გამოდის
     }
 }

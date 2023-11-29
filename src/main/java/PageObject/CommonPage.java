@@ -11,7 +11,4 @@ public class CommonPage {
     cart_button = $("#cart-p"),
     sort_option = $(".sc-e7d6b729-2"),
     decreasing_price = $(byText("ფასი: კლებადობით"),0);
-
-
-
 }

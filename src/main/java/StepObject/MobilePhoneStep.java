@@ -104,7 +104,7 @@ public class MobilePhoneStep extends MobilePhonePage {
 
     @Step("ყველა მობილურის ფასის შედარება ფილტრში ჩაწერილ ფასებთან ")
     public MobilePhoneStep slider_sort_prices_test() {
-        $(".sc-bdd54c0a-0",0).shouldBe(Condition.visible, Duration.ofMillis(10000));
+        first_item.shouldBe(Condition.visible, Duration.ofMillis(10000));
         for ( int i = 0; i < mobile_phone_count_size(); i++ ){
             String next_string_price = $(".sc-bdd54c0a-10",i).getText();
             next_string_price = next_string_price.replaceAll("[^0-9]", "");

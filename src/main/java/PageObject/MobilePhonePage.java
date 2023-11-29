@@ -14,6 +14,7 @@ public class MobilePhonePage {
     right_price_slider = $(".MuiSlider-thumb", 1),
     left_slider_head_price = $(".MuiSlider-valueLabelLabel", 0),
     right_slider_head_price = $(".MuiSlider-valueLabelLabel", 1),
+    first_item = $(".sc-bdd54c0a-0",0),
     mobile_phone_price_div2 = $(".sc-bdd54c0a-10"),
     mobile_phone_0index_String_price = $(".sc-bdd54c0a-10", 0),
     mobile_phone_loading_page = $(".kNdwyk");

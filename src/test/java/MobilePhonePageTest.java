@@ -5,9 +5,10 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.Chromerunner;
-
 import java.time.Duration;
 
 import static DataObject.MobilePhonePageData.*;
@@ -18,6 +19,7 @@ import static java.lang.Thread.sleep;
 public class MobilePhonePageTest extends Chromerunner {
     HomePageStep homePageStep = new HomePageStep();
     MobilePhoneStep mobilePhoneStep = new MobilePhoneStep();
+
     @Test
     @Description("ფასის ფილტრის სლაიდერის რესტი, ნამდვილად შესაბამება თუ არა სლაიდერის მდებარეობა ფილტრის მინიმალური თანხის ინფუთში ჩაწერილ თანხას")
     @Severity(SeverityLevel.CRITICAL)
