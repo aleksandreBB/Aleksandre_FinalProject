@@ -17,7 +17,7 @@ public class HomePageTest extends Chromerunner {
         homePageStep.checking_new_icon();
     }
     @Test
-    @Description ("მთავარ გვერძე ფასდაკლებული ნივთების სლაიდერის ტესტი, ნამდვილად აქვს თუ არა ყველა ნივთს დაკლებული ფასი")
+    @Description ("მთავარ გვერძე ცხელი შეთავაზებების სლაიდერის ტესტი, ნამდვილად აქვს თუ არა ყველა ნივთს დაკლებული ფასი და რომელიმე აქცის ნიშანი")
     @Severity(SeverityLevel.NORMAL)
     public void sale_slider_Test(){
         homePageStep.scroll_To_sale_Slider();
