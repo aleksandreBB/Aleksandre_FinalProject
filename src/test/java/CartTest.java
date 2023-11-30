@@ -27,7 +27,8 @@ public class CartTest extends Chromerunner {
    @Severity(SeverityLevel.MINOR)
    public void add_and_clear_item_to_cart_test() {
        commonPageStep.log_in_cart_page();
-       cartPageStep.empty_cart_check();
+       cartPageStep.waiting_empty_cart();
+       Assert.assertTrue(cartPageStep.empty_cart.is(Condition.visible),"კალათა უნდა იყოს ცარიელი");
        commonPageStep.Search_item(search_input_value);
        cartPageStep.add_button_check();
        commonPageStep.log_in_cart_page();
@@ -60,6 +61,6 @@ public class CartTest extends Chromerunner {
         Assert.assertEquals(cartPageStep.amount_to_be_Paid(),
                 cartPageStep.value_of_items() + cartPageStep.value_of_shipping(),"გადასახდელი თანხა ტორი უნდა იყოს ღირებულებას მიმატებული მიწოდების ღირებულება");
         cartPageStep.go_to_buy();
-        Assert.assertTrue(regAuthorizationPage.authorization_page.is(Condition.visible),"რეგისტრაზია ავტორიზაცის გვერდის გამოსვლა");
+        Assert.assertTrue(regAuthorizationPage.authorization_page.is(Condition.visible),"უნდა გამოვიდეს რეგისტრაზია ავტორიზაცის გვერდის ");
     }
 }

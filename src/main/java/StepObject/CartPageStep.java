@@ -10,9 +10,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CartPageStep extends CartPage {
     @Step("ცარიელი კალათის შემოწმება")
-    public CartPageStep empty_cart_check(){
+    public CartPageStep waiting_empty_cart(){
         empty_cart.shouldBe(Condition.visible, Duration.ofMillis(8000));
-        Assert.assertTrue(empty_cart.is(Condition.visible));
         return this;
     }
     @Step("კალათაში დამატების ღილაკის გატესტვა და დამატება")

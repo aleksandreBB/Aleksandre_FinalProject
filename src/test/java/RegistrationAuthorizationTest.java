@@ -47,7 +47,7 @@ public class RegistrationAuthorizationTest extends Chromerunner {
         regAuthorizationPageStep.put_incomplete_random_number(fake_random_number);
         regAuthorizationPageStep.agree_terms_and_conditions();
         regAuthorizationPageStep.registration_button_click();
-        Assert.assertTrue((regAuthorizationPage.mandate).is(Condition.visible),"უნდა გამოჩნდეს მანდატორი");
+        Assert.assertTrue((regAuthorizationPage.mandate).is(Condition.visible),"უნდა გამოჩნდეს ტექსტი 'არასწორი მონაცემი'");
     }
 
     @Test
@@ -72,7 +72,7 @@ public class RegistrationAuthorizationTest extends Chromerunner {
         regAuthorizationPageStep.put_incomplete_random_number(fake_random_number);
         regAuthorizationPageStep.send_code_click();
         regAuthorizationPageStep.waiting_confirm_code();
-        Assert.assertTrue((regAuthorizationPage.mandate).is(Condition.visible),"უნდა გამოჩნდეს მანდატორი");
+        Assert.assertTrue((regAuthorizationPage.mandate).is(Condition.visible),"უნდა გამოჩნდეს ტექსტი 'არასწორი მონაცემი'");
     }
 
     @Test
